@@ -1,0 +1,106 @@
+// Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
+const CACHE_NAME = 'whc-2bcde698f9aa';
+const PRECACHE_URLS = [
+  "./",
+  "./assets/backgrounds/capitol.svg",
+  "./assets/backgrounds/club.svg",
+  "./assets/backgrounds/crash.svg",
+  "./assets/backgrounds/home.svg",
+  "./assets/backgrounds/market_night.svg",
+  "./assets/backgrounds/night.svg",
+  "./assets/backgrounds/office.svg",
+  "./assets/backgrounds/office_day.svg",
+  "./assets/backgrounds/sec_hq.svg",
+  "./assets/backgrounds/void.svg",
+  "./assets/characters/atkins_alt_default.svg",
+  "./assets/characters/atkins_alt_serious.svg",
+  "./assets/characters/atkins_alt_smile.svg",
+  "./assets/characters/atkins_default.svg",
+  "./assets/characters/atkins_serious.svg",
+  "./assets/characters/atkins_smile.svg",
+  "./assets/characters/cramer_default.svg",
+  "./assets/characters/cramer_serious.svg",
+  "./assets/characters/cramer_smile.svg",
+  "./assets/characters/cz_default.svg",
+  "./assets/characters/cz_serious.svg",
+  "./assets/characters/cz_smile.svg",
+  "./assets/characters/dimon_default.svg",
+  "./assets/characters/dimon_serious.svg",
+  "./assets/characters/dimon_smile.svg",
+  "./assets/characters/hayes_default.svg",
+  "./assets/characters/hayes_serious.svg",
+  "./assets/characters/hayes_smile.svg",
+  "./assets/characters/lummis_default.svg",
+  "./assets/characters/lummis_serious.svg",
+  "./assets/characters/lummis_smile.svg",
+  "./assets/characters/sanders_default.svg",
+  "./assets/characters/sanders_serious.svg",
+  "./assets/characters/sanders_smile.svg",
+  "./assets/characters/saylor_default.svg",
+  "./assets/characters/saylor_serious.svg",
+  "./assets/characters/saylor_smile.svg",
+  "./assets/characters/sbf_default.svg",
+  "./assets/characters/sbf_serious.svg",
+  "./assets/characters/sbf_smile.svg",
+  "./assets/characters/selig_default.svg",
+  "./assets/characters/selig_serious.svg",
+  "./assets/characters/selig_smile.svg",
+  "./assets/characters/tomlee_default.svg",
+  "./assets/characters/tomlee_serious.svg",
+  "./assets/characters/tomlee_smile.svg",
+  "./assets/characters/warren_default.svg",
+  "./assets/characters/warren_serious.svg",
+  "./assets/characters/warren_smile.svg",
+  "./assets/index-B724mgmb.js",
+  "./assets/index-CFcgah8L.css",
+  "./icons/apple-touch-icon.png",
+  "./icons/icon-192.png",
+  "./icons/icon-512.png",
+  "./icons/icon-maskable-512.png",
+  "./index.html",
+  "./manifest.webmanifest"
+];
+const SCOPE = self.registration.scope;
+const INDEX_URL = new URL('index.html', SCOPE).href;
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then((cache) => cache.addAll(PRECACHE_URLS.map((u) => new URL(u, SCOPE).href)))
+      .then(() => self.skipWaiting())
+  );
+});
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE_NAME).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
+  );
+});
+
+self.addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.method !== 'GET') return;
+  if (new URL(request.url).origin !== self.location.origin) return;
+  if (request.mode === 'navigate') {
+    // App shell: always serve the cached index.html (query strings such as
+    // ?scenario=demo or ?unlock=all are handled by the app itself).
+    event.respondWith(
+      caches.match(INDEX_URL).then((cached) => cached || fetch(request))
+    );
+    return;
+  }
+  event.respondWith(
+    caches.match(request, { ignoreSearch: true }).then((cached) => {
+      if (cached) return cached;
+      return fetch(request).then((response) => {
+        if (response.ok) {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, copy));
+        }
+        return response;
+      });
+    })
+  );
+});
