@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-519d8006ea06';
+const CACHE_NAME = 'whc-1158dd074b25';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
@@ -35,6 +35,7 @@ const PRECACHE_URLS = [
   "./assets/characters/lummis_default.svg",
   "./assets/characters/lummis_serious.svg",
   "./assets/characters/lummis_smile.svg",
+  "./assets/characters/pomp_default.svg",
   "./assets/characters/sanders_default.svg",
   "./assets/characters/sanders_serious.svg",
   "./assets/characters/sanders_smile.svg",
@@ -44,6 +45,7 @@ const PRECACHE_URLS = [
   "./assets/characters/sbf_default.svg",
   "./assets/characters/sbf_serious.svg",
   "./assets/characters/sbf_smile.svg",
+  "./assets/characters/schiff_default.svg",
   "./assets/characters/selig_default.svg",
   "./assets/characters/selig_serious.svg",
   "./assets/characters/selig_smile.svg",
@@ -53,7 +55,7 @@ const PRECACHE_URLS = [
   "./assets/characters/warren_default.svg",
   "./assets/characters/warren_serious.svg",
   "./assets/characters/warren_smile.svg",
-  "./assets/index-B6RmYRbK.js",
+  "./assets/index-BWacsW3u.js",
   "./assets/index-CFcgah8L.css",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",
