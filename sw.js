@@ -73,7 +73,11 @@ const INDEX_URL = new URL('index.html', SCOPE).href;
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then((cache) => cache.addAll(PRECACHE_URLS.map((u) => new URL(u, SCOPE).href)))
+      // Add files one by one and tolerate individual failures (e.g. an icon
+      // that has not been uploaded yet): cache.addAll would abort the whole
+      // install on a single 404 and updates would never reach the device.
+      .then((cache) => Promise.all(PRECACHE_URLS.map((u) =>
+        cache.add(new URL(u, SCOPE).href).catch(() => undefined))))
       .then(() => self.skipWaiting())
   );
 });
