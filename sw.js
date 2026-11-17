@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-d5309928f82b';
+const CACHE_NAME = 'whc-a0756dcd7d1d';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
