@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <!-- Placeholder background home (アトキンス宅). Gradient palette sampled from the Space version's CSS. -->
+  <defs><radialGradient id="g" cx="50%" cy="0%" r="120%"><stop offset="0" stop-color="#3d2c1e"/><stop offset="0.55" stop-color="#1d150e"/><stop offset="1" stop-color="#0a0705"/></radialGradient></defs>
+  <rect width="1280" height="720" fill="url(#g)"/>
+</svg>
