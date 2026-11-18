@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-oyashiro-reframed-v10';
+const CACHE_NAME = 'whc-oyashiro-80pct-v11';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
@@ -57,8 +57,8 @@ const PRECACHE_URLS = [
   "./assets/characters/warren_default.svg",
   "./assets/characters/warren_serious.svg",
   "./assets/characters/warren_smile.svg",
-  "./assets/index-oyashiro-framed-v4.css",
-  "./assets/index-oyashiro-framed-v4.js",
+  "./assets/index-oyashiro-80pct-v5.css",
+  "./assets/index-oyashiro-80pct-v5.js",
   "./assets/title-day-wide.svg",
   "./assets/title-tall.svg",
   "./assets/title-wide.svg",
