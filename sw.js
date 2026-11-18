@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-ep01-20261118-oyashiro-scale-v3';
+const CACHE_NAME = 'whc-ep01-20261118-sbf-atkins-size-v4';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
