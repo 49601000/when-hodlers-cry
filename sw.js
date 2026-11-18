@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-oyashiro-80pct-v13';
+const CACHE_NAME = 'whc-oyashiro-80pct-v14';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
