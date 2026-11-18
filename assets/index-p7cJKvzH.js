@@ -5,6 +5,7 @@ var H=Object.defineProperty;var F=(n,e,s)=>e in n?H(n,e,{enumerable:!0,configura
 // 変換時の対応・簡略化は docs/SPECIFICATION.md の「第1章移植」節を参照。
 // ============================================================
 
+// Character direction: CZ alone hints at repetition. The figure called オヤシロ様 appears only as an unidentified silhouette; only at L5 is an unexplained whisper of 「ごめんなさい……」 heard. No direct dialogue with anyone except CZ.
 @label p0
 // scene: SEC — 着任の日
 @bg sec_hq
@@ -13,7 +14,7 @@ var H=Object.defineProperty;var F=(n,e,s)=>e in n?H(n,e,{enumerable:!0,configura
 蝉の声と、取引所の稼働音が、同じ音量で鳴っていた。
 
 @label p1
-その日、ポール・アトキンスは SEC——米証券取引委員会の委員長に着任した。
+その日、ポール・アトキンスは SEC——米証券取引委員会にやって来た。周囲からは、ただ「SECの人」と呼ばれている。
 
 @label p2
 @show atkins smile center
@@ -26,13 +27,13 @@ atkins(smile): よし……今日からここが俺の戦場だ。市場の番�
 @show atkins smile left
 @show selig smile right
 @sound blip
-selig(smile): あっ！　来た来た来た！　新しい委員長だ！　ねえねえ、ほんとに来たんだね？　かな？　かな？
+selig(smile): あっ！　来た来た来た！　SECの人だ！　ねえねえ、ほんとに来たんだね？　かな？　かな？
 
 @label p5
 atkins(serious): えっ、あ……君は？
 
 @label p6
-selig(smile): マイケル・セリグ。CFTC——商品先物取引委員会の委員長だよ。今日からお隣さんだね。よろしくね、アトキンス委員長！
+selig(smile): マイケル・セリグ。CFTC——商品先物取引委員会のSECの人だよ。今日からお隣さんだね。よろしくね、SECの人！
 
 @label p7
 @hide atkins
@@ -68,7 +69,7 @@ lummis(smile): 規制当局も議員もトレーダーも、立場を超えて�
 @label p12
 @hide selig
 @show saylor smile right
-saylor(smile): ……初めまして、委員長。マイケル・セイラーです。私はただ、ビットコインを信じているだけの男ですよ。静かに、深く、ね。
+saylor(smile): ……初めまして、SECの人。マイケル・セイラーです。私はただ、ビットコインを信じているだけの男ですよ。静かに、深く、ね。
 
 @label p13
 @hide lummis
@@ -109,18 +110,18 @@ atkins(default): あんたは……CZ さん、だよな。巨大取引所の創
 @hide atkins
 @show cz default center
 cz(default): ぼくは、ちょっと考えごとをしていただけなのですよ。にぱー☆
-cz(default): ……前も、ここでそう聞かれたから。
+cz(default): ……そう聞かれる気がしていたのですよ。
 
 @label p20
 @show atkins serious left
 @show cz default right
-atkins(serious): 何度……？　俺たち、今日が初対面のはずじゃ……
+atkins(serious): ……どうして俺の質問が分かったんだ？
 
 @label p21
 @hide atkins
 @show cz default center
 cz(default): 気のせいなのですよ。ほら、笑ってください。平穏な日は、笑っておくものなのですよ。
-cz(default): ……どうせ、長くは続かないから。
+cz(default): ……この静けさが、続けばいいのですけれど。
 
 @label p22
 @clear
@@ -132,7 +133,7 @@ cz(default): ……どうせ、長くは続かないから。
 @show lummis smile center
 lummis(smile): よし新入り、歓迎のミニゲームだ！　「明日の BTC は上がるか下がるか」。外したら罰ゲーム。……どうした、怖いのかい？　さあ、どっちに賭ける？
 @choice
-- 「上がる」に賭ける ― 根拠はない。だが委員長の勘だ。 -> c1up
+- 「上がる」に賭ける ― 根拠はない。だがSECの人の勘だ。 -> c1up
 - 「下がる」に賭ける ― 慎重に。市場は甘くない。 -> c1down
 - 賭けそのものを断る ― 規制当局が賭け事とは何事か。 -> c1no
 @endchoice
@@ -142,7 +143,7 @@ lummis(smile): よし新入り、歓迎のミニゲームだ！　「明日の B
 @show selig smile right
 @set trust += 1
 lummis(serious): お、乗ってきたね。そうこなくっちゃ、おじさんも張り合いがないよ。
-selig(smile): わあ、委員長は強気なんだね！　かわいいチャートは上がるチャート。私もそっちがいいな。かな？　かな？
+selig(smile): わあ、SECの人は強気なんだね！　かわいいチャートは上がるチャート。私もそっちがいいな。かな？　かな？
 @jump m1
 
 @label c1down
@@ -165,6 +166,8 @@ cz(default): ……まあ、賭けなくても失う夜は来るけど。
 @clear
 数日が過ぎた。茶話会は陽気で、市場は穏やかで、俺はすっかりこの街に馴染んでいた。
 ——異変は、まず「板」から始まった。
+この街には、昔から妙な噂がある。六月のある夜、相場から流動性が消えると、「オヤシロ様の祟り」が始まるのだという。
+誰が言い出したのかも、オヤシロ様が何者なのかも、誰も知らない。
 
 @label m2
 @show atkins default center
@@ -178,7 +181,7 @@ atkins(default): ……ん？　この取引所、買い板が薄くないか？
 @hide atkins
 @show dimon serious center
 @sound blip
-dimon(serious): おい委員長、その顔は「気づいた」顔だな。ジェイミー・ダイモンだ。銀行の人間が言うのもなんだが……今夜は、妙だ。
+dimon(serious): おいSECの人、その顔は「気づいた」顔だな。ジェイミー・ダイモンだ。銀行の人間が言うのもなんだが……今夜は、妙だ。
 
 @label m5
 @show atkins serious left
@@ -188,28 +191,29 @@ atkins(serious): ダイモンさんまで……。何か知ってるんですか
 @label m6
 @hide atkins
 @show dimon serious center
-dimon(serious): 知ってるのは「誰も何も言わない」という事実だけだ。流動性が消える夜は、決まって静かだ。……気をつけな、委員長。疑うべきは価格じゃない、人だ。
+dimon(serious): 知ってるのは「誰も何も言わない」という事実だけだ。流動性が消える夜は、決まって静かだ。……気をつけな、SECの人。疑うべきは価格じゃない、人だ。
 
 @label m7
 // scene: 帰路 — 夜のワシントン
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
 @bg night
 @hide dimon
-@show sbf serious center
+@show sbf default center
 @sound tension
-sbf(serious): あうあう……あ、あの……すみません……。
+街灯の届かない場所に、小さな人影が一瞬だけ浮かんだ。顔も輪郭もはっきりしない。声は聞こえない。
 
 @label m8
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
 @show atkins serious left
 @show sbf serious right
-atkins(serious): だ、誰だ！？　……って、SBF！？　あんた、もう表舞台には……！
+atkins(serious): ……誰かいるのか？　おい、返事をしてくれ！
 
 @label m9
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
 @hide atkins
-@show sbf serious center
-sbf(serious): あう……ごめんなさい、ごめんなさい……。ぼ、僕は止められないんです。いつも、そばで見ていることしか……。で、でも今夜は言いに来ました。……「板が消えるのは、始まり」なんです。あのときも、そうでした……。
+@show sbf default center
+影は返事をしない。ただ、誰かを待っているように暗がりを見つめていた。
+——オヤシロ様の祟り。昼間に聞いた噂が、なぜか頭をよぎった。
 
 @label m10
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
@@ -231,7 +235,7 @@ atkins(serious): あのとき……？　おい、待て！　消えるな！
 atkins(default): ……落ち着け。データを見よう。流動性が消えた時刻、消えた取引所、消えた金額。偶然で済む話かどうかは、数字が教えてくれる。
 @choice
 - データ室で注文履歴を洗う ― 数字は嘘をつかない。はずだ。 -> d1
-- セリグに電話して様子を聞く ― 隣の委員長の勘は鋭い。 -> d2
+- セリグに電話して様子を聞く ― 隣のSECの人の勘は鋭い。 -> d2
 - ルミスに会って茶話会の様子を探る ― あの会の空気は、市場そのものだ。 -> d3
 @endchoice
 
@@ -248,7 +252,7 @@ atkins(serious): ……あった。消えた買い注文は全部、同一時刻
 @hide atkins
 @show selig smile center
 @set trust += 1
-selig(smile): もしもし委員長！　夜中に電話なんて、かわいいね。……うん、板のこと？　知ってるよ。だって私、今日の午後ずっと見てたもん。かわいいチャートが、痩せていくの。……ねえ委員長。痩せたんじゃないよ。誰かに、食べられてるんだよ。
+selig(smile): もしもしSECの人！　夜中に電話なんて、かわいいね。……うん、板のこと？　知ってるよ。だって私、今日の午後ずっと見てたもん。かわいいチャートが、痩せていくの。……ねえSECの人。痩せたんじゃないよ。誰かに、食べられてるんだよ。
 @jump n1
 
 @label d3
@@ -256,7 +260,7 @@ selig(smile): もしもし委員長！　夜中に電話なんて、かわいい
 @hide selig
 @show lummis default center
 @set trust += 1
-lummis(default): おう委員長、こんな夜に。……板の話か。あたしも気になってる。ただな、この会の連中は誰も騒がない。それが一番おかしいんだ。嵐の前は、ベテランほど静かになる。
+lummis(default): おうSECの人、こんな夜に。……板の話か。あたしも気になってる。ただな、この会の連中は誰も騒がない。それが一番おかしいんだ。嵐の前は、ベテランほど静かになる。
 @jump n1
 
 @label n1
@@ -269,7 +273,7 @@ lummis(default): おう委員長、こんな夜に。……板の話か。あた
 @label n2
 @show selig default center
 @sound tension
-selig(default): ……委員長？　起きてる？　ねえ、聞いて。……「ウス」って、知ってる？
+selig(default): ……SECの人？　起きてる？　ねえ、聞いて。……「ウス」って、知ってる？
 
 @label n3
 @hide selig
@@ -279,7 +283,7 @@ atkins(serious): ウス……？　何の話だ、セリグ。
 @label n4
 @hide atkins
 @show selig default center
-selig(default): 市場の噂だよ。「流動性が消えた理由を知ってるのは、最初から計画していた人間だけ」……だって。ねえ委員長。……委員長は、私を信じてる？　かな？　かな？
+selig(default): 市場の噂だよ。「流動性が消えた理由を知ってるのは、最初から計画していた人間だけ」……だって。ねえSECの人。……SECの人は、私を信じてる？　かな？　かな？
 
 @label n5
 @hide selig
@@ -290,7 +294,7 @@ atkins(serious): （なぜ今、そんなことを聞く……？　こいつの
 @hide atkins
 @show warren serious center
 @sound blip
-warren(serious): ——その電話、代わってもらえるかしら。エリザベス・ウォーレンよ。委員長、夜分に失礼ね。
+warren(serious): ——その電話、代わってもらえるかしら。エリザベス・ウォーレンよ。SECの人、夜分に失礼ね。
 
 @label n7
 @show atkins serious left
@@ -304,14 +308,14 @@ warren(serious): あら、驚くところはそこ？　私はずっと観察し
 
 @label n9
 @sound tension
-warren(serious): 「Operation E.W.」——その名前を聞く日が来たら、思い出して。恐怖はね、設計できるのよ。じゃあ、おやすみなさい、委員長。良い……暴落を。
+warren(serious): 「Operation E.W.」——その名前を聞く日が来たら、思い出して。恐怖はね、設計できるのよ。じゃあ、おやすみなさい、SECの人。良い……暴落を。
 
 @label n10
 @hide warren
 @show atkins serious center
 @syndrome 4
 atkins(serious): ツー、ツー、ツー……。
-atkins: ……なんだ、今のは。なんで俺は、手が震えてるんだ。……ウォーレン。セリグ。CZ の言葉。「何度やっても同じ夜」。——みんな、何か隠してる。
+atkins: ……なんだ、今のは。なんで俺は、手が震えてるんだ。……ウォーレン。セリグ。CZの妙な言葉。——みんな、何か隠してる。
 
 @label n11
 @clear
@@ -327,7 +331,7 @@ atkins(serious): （誰を信じる？　誰も信じられないなら、俺は
 @choice
 - 仲間を信じる。茶話会の全員を執務室に呼ぶ ― 一人の疑心より、全員の本音だ。 -> t1
 - 誰も信じない。自分だけで真相を追う ― 信じた者が、最初に裏切る。 -> s1
-- CZに直接会いに行く ― 「何度やっても」の意味を聞く。 -> z1
+- CZに直接会いに行く ― あの不思議な言葉の意味を聞く。 -> z1
 @endchoice
 
 @label t1
@@ -335,13 +339,13 @@ atkins(serious): （誰を信じる？　誰も信じられないなら、俺は
 @hide atkins
 @show lummis default left
 @show selig default right
-lummis(default): 全員集合とは珍しいな、委員長。……その顔、昨夜の電話の話だな。いいぜ、全部話そう。あたしらが隠してたのは「計画」じゃない。「恐怖」だ。誰もが次の暴落を恐れて、板を引っ込めてたんだ。
+lummis(default): 全員集合とは珍しいな、SECの人。……その顔、昨夜の電話の話だな。いいぜ、全部話そう。あたしらが隠してたのは「計画」じゃない。「恐怖」だ。誰もが次の暴落を恐れて、板を引っ込めてたんだ。
 
 @label t2
 @hide lummis
 @show selig smile center
 @set clue1 = true
-selig(smile): 委員長、私ね、かわいいものをお持ち帰りするのが趣味だけど……本当はね、「怖いもの」も集めてるんだ。暴落の記録、全部。……ほら、これ。3年前の夜と今夜の板の形、重ねてみて？　……同じだよ。かな？　かな？
+selig(smile): SECの人、私ね、かわいいものをお持ち帰りするのが趣味だけど……本当はね、「怖いもの」も集めてるんだ。暴落の記録、全部。……ほら、これ。3年前の夜と今夜の板の形、重ねてみて？　……同じだよ。かな？　かな？
 
 @label t3
 @hide selig
@@ -359,15 +363,15 @@ atkins(serious): ……入館ログ。暴落の夜、執務室フロアに入っ
 
 @label s3
 @hide atkins
-@show sbf serious center
+@show sbf default center
 @sound tension
-sbf(serious): あうあう……委員長……。そ、その探し方は、危ないです……。疑えば疑うほど、進んじゃうんです。あの症候群が……。僕は見てきました。何度も、何度も……。
+その廊下の奥に、正体の分からない小さなシルエットが一瞬だけ見えた。何も言わず、次の瞬間には消えていた。
 
 @label s4
 @show atkins serious left
 @show sbf serious right
 @set susp += 1
-atkins(serious): SBF……！　なぜここに。……「何度も」って、どういう意味だ！　CZ も同じことを言った。お前たち、何を知ってる！？
+atkins(serious): ……誰だ？　おい、待て！　……消えた？　今のは、見間違いか……？
 @jump f1
 
 @label z1
@@ -377,24 +381,24 @@ atkins(serious): SBF……！　なぜここに。……「何度も」って、
 @hide sbf
 @hide atkins
 @show cz default center
-cz(default): ……来ると思ったよ、委員長。少しだけ話そう。「この6月」は、もう何度目か分からない。市場が崩れて、みんな L5 になって、世界が終わって……気づくと、また着任の日だ。
+cz(default): ……来たのですね、SECの人。にぱー☆　この六月のことは、まだ話せないのですよ。……ただ、同じ間違いだけは、しないでほしいのです。
 
 @label z2
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
 @show atkins serious left
 @show cz default right
-atkins(serious): ……ループ……してる、って言うのか？　そんな非科学的な……
+atkins(serious): ……同じ間違い？　いったい何の話をしているんだ？
 
 @label z3
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
 @hide atkins
 @show cz default center
-cz(default): 非科学的？　市場なんて、元々そうだろ。同じ強欲で上がって、同じ恐怖で崩れて、同じ後悔で眠る。……ぼくはただ、それを自覚して繰り返してるだけだ。
+cz(default): 市場は、いつだって同じ顔で笑うのですよ。……でも、笑っているうちに何かを見落としてしまうのです。
 
 @label z4
 // (原作: 月のオーバーレイ演出 — エンジン未対応のため省略)
 @set trust += 1
-cz(default): ……一つだけ忠告。ウォーレンの計画は本物だ。でも、彼女一人じゃ惨劇は完成しない。惨劇が完成するのは——主人公が、誰も信じられなくなったときだ。……委員長、あんた自身のことだよ。
+cz(default): ……一つだけ忠告。ウォーレンの計画は本物だ。でも、彼女一人じゃ惨劇は完成しない。惨劇が完成するのは——主人公が、誰も信じられなくなったときだ。……SECの人、あんた自身のことだよ。
 @jump f1
 
 @label f1
@@ -405,6 +409,7 @@ cz(default): ……一つだけ忠告。ウォーレンの計画は本物だ。�
 @syndrome 5
 @sound alert
 そして、その夜が来た。
+——オヤシロ様の祟り。そんな言葉を、誰かが囁いた気がした。
 午後11時47分。一つの取引所で大口の売りが炸裂し、清算は連鎖し、価格は滝のように落ち始めた。
 
 @label f2
@@ -421,23 +426,26 @@ cramer(serious): 売れ！　全部売れと言ったはずだ！！　リー！
 @label f4
 @hide cramer
 @show tomlee serious center
-tomlee(serious): お、おーっほっほ……ほ、ほら、これは罠の発動タイミングが早まっただけで……わ、私は悪くありませんわ……！　仕掛けたのは私でも、踏んだのは市場の皆さんで……！
+tomlee(serious): ……ひっ……！　や、やめてくださいまし……。にーにー……にーにー……助けてくださいまし……。
 
 @label f5
 @hide tomlee
 @show dimon serious center
-dimon(serious): 委員長！　聞こえるか！　これは自然な暴落じゃない。売りの出所が人工的だ。……だがな、もっと怖いのは価格じゃない。全員の目が、もう「L5 の目」になってることだ！
+dimon(serious): SECの人！　聞こえるか！　これは自然な暴落じゃない。売りの出所が人工的だ。……だがな、もっと怖いのは価格じゃない。全員の目が、もう「L5 の目」になってることだ！
 
 @label f6
 @hide dimon
 @show atkins serious center
 atkins(serious): （頭の中で声がする。売るな。買え。押し目だ。いや——誰も信じるな。鍵を守れ。資産を守れ。ドアを閉めろ。閉めて、閉めて、閉めて——）
+視界の端に、あの小さなシルエットが立っていた。L5に達した今だけ、聞こえるはずのない声が耳元に落ちる。
+「……ごめんなさい……」
+振り向いても、そこには誰もいない。
 
 @label f7
 @hide atkins
 @show sanders serious center
 @sound blip
-sanders(serious): アトキンス委員長！　しっかりしなさい！　傷ついた投資家を救う方法は、ドアを閉めることじゃない。人を信じる力を、最後の一つだけ残しておくことだ！
+sanders(serious): SECの人！　しっかりしなさい！　傷ついた投資家を救う方法は、ドアを閉めることじゃない。人を信じる力を、最後の一つだけ残しておくことだ！
 
 @label f8
 @hide sanders
@@ -446,7 +454,7 @@ atkins(serious): ……俺は……俺は、どうすれば……！
 @choice
 - ドアを閉める。誰の声も聞かない ― 鍵と資産だけが、俺の味方だ。 -> bad1
 - 執務室のドアを開け、仲間を中に入れる ― 信じる力を、最後の一つだけ。 -> good1
-- CZに電話する。「何度目でも、終わらせよう」 ― ループを知る者と、ループを断つ。 -> good2
+- CZに電話する。「君の言葉が気になる」 ― あの不思議な忠告を確かめる。 -> good2
 @endchoice
 
 @label bad1
@@ -456,14 +464,14 @@ atkins(serious): ……そうだ。閉める。全部閉める。取引も、ド
 
 @label bad2
 @clear
-その夜、SEC委員長の執務室のドアは、二度と開かなかった。
+その夜、SECの人の執務室のドアは、二度と開かなかった。
 市場は崩壊し、48時間後——世界中の参加者が L5 に達した。
 
 @label bad3
 @show cz default center
-cz(default): ……また、この結末か。……いいよ。もう一度だ。もう一度、6月から。……今度こそ、誰か、彼を信じさせてあげて。
+cz(default): ……また、なのですね。……次こそは。にぱー☆
 ドアは、開かなかった
-疑心が完成した夜、惨劇も完成した。だがこの物語はループする。CZ の言う通り、また6月の着任日から始まる。今度は——誰かを信じる選択が、世界を変えるかもしれない。
+疑心が完成した夜、惨劇も完成した。だが、CZだけは何かを知っているようだった。次に訪れる六月を、誰もまだ知らない。
 @end bad BAD END
 
 @label good1
@@ -472,20 +480,20 @@ cz(default): ……また、この結末か。……いいよ。もう一度だ�
 @show lummis smile left
 @show selig default center
 @show saylor default right
-lummis(serious): 委員長！　ドアを開けたな。その話はあと。今はこっち来な——全員で板を支えるぞ！
+lummis(serious): SECの人！　ドアを開けたな。その話はあと。今はこっち来な——全員で板を支えるぞ！
 
 @label good1b
 @hide lummis
 @hide saylor
 @set clue3 = true
-selig(smile): 委員長が信じてくれたから、私も怖いのを全部見せるね。これ、ウォーレンの事務所から「お持ち帰り」しちゃった資料。……Operation E.W. の実施計画書だよ。
+selig(smile): SECの人が信じてくれたから、私も怖いのを全部見せるね。これ、ウォーレンの事務所から「お持ち帰り」しちゃった資料。……Operation E.W. の実施計画書だよ。
 @jump good3
 
 @label good2
 @hide selig
 @show cz serious center
 @set clue3 = true
-cz(serious): ……委員長から電話が来たのは、初めてだ。何周しても、彼は一人でドアを閉めた。……あんた、今回の世界線は「当たり」かもしれない。——いいよ、全部話す。計画の実物も、見せよう。
+cz(serious): ……電話をくれたのですね。にぱー☆　なら、まだ間に合うかもしれないのです。計画の資料は、ここにあるのですよ。
 @jump good3
 
 @label good3
@@ -498,16 +506,16 @@ warren(serious): ……あら。計画書が、もう表に出てしまったの
 @show atkins default center
 @ticker BTC $88,930 -8.6% | ETH $2,690 -21.3% | 強欲指数 31 · 恐怖 | 連鎖清算 $1.9B
 @syndrome 2
-atkins(default): ……終わったのか、今夜は。……ウォーレン、聞かせろ。Operation E.W. の全貌を。そして——「繰り返される6月」のことも。
+atkins(default): ……終わったのか、今夜は。……ウォーレン、聞かせろ。Operation E.W. の全貌を。
 
 @label good5
 // scene: 夜明け — 議事堂
 @bg capitol
 @hide atkins
 @show cz smile center
-cz(smile): 夜が明けたのですよ。何度繰り返しても朝日は同じで、でも少しだけ違って見えるのです。……委員長、次は創始者の話をしましょう。消えた男——サトシ・ナカモトの話を。
+cz(smile): 夜が明けたのですよ。……今日は、少しだけ違う朝なのです。にぱー☆　次は、消えた創始者のお話をするのですよ。
 夜明け — 第1章 完
-今夜の惨劇は回避された。だが Operation E.W. の全貌と、「繰り返される6月」の謎はまだ深い。第2章「消えた創始者」へ——サトシ・ナカモトを巡る物語は「章と物語」であらすじを公開中。
+今夜の惨劇は回避された。だが Operation E.W. の全貌と、CZの不思議な言葉の意味はまだ分からない。第2章「消えた創始者」へ——サトシ・ナカモトを巡る物語は「章と物語」であらすじを公開中。
 @end clear CHAPTER 1 CLEAR
 `;class m extends Error{constructor(e,s){super(`line ${s}: ${e}`),this.line=s}}function S(n){const e=n.trim();return e==="true"?!0:e==="false"?!1:/^-?\d+(\.\d+)?$/.test(e)?Number(e):e.startsWith('"')&&e.endsWith('"')||e.startsWith("'")&&e.endsWith("'")?e.slice(1,-1):e}function q(n,e){const s=n.trim();if(s.startsWith("!"))return{flag:s.slice(1).trim(),op:"falsy"};const i=s.match(/^([A-Za-z0-9_]+)\s*(==|!=|>=|<=|>|<)\s*(.+)$/);if(i)return{flag:i[1],op:i[2],value:S(i[3])};if(/^[A-Za-z0-9_]+$/.test(s))return{flag:s,op:"truthy"};throw new m(`invalid condition: ${n}`,e)}const D=["left","center","right"];function R(n){const e=[],s=new Map,i=n.split(/\r?\n/);let t=0;for(;t<i.length;){const a=t+1,o=i[t];t++;const u=o.trim();if(u===""||u.startsWith("//"))continue;if(u.startsWith("@")){const f=u.indexOf(" "),p=f===-1?u.slice(1):u.slice(1,f),d=f===-1?"":u.slice(f+1).trim();switch(p){case"label":{if(!d)throw new m("@label needs a name",a);s.has(d)||s.set(d,e.length),e.push({type:"label",name:d,line:a});break}case"bg":e.push({type:"bg",id:d,line:a});break;case"show":{const r=d.split(/\s+/).filter(Boolean);if(!r[0])throw new m("@show needs a character id",a);const b=D.includes(r[2]??"")?r[2]:"center";e.push({type:"show",charId:r[0],expression:r[1]??"default",position:b,line:a});break}case"outfit":{const r=d.split(/\s+/).filter(Boolean);if(r.length<2)throw new m("@outfit syntax: @outfit charId outfitId",a);e.push({type:"outfit",charId:r[0],outfit:r[1],line:a});break}case"hide":e.push({type:"hide",charId:d.split(/\s+/)[0]??"",line:a});break;case"clear":e.push({type:"clear",line:a});break;case"ticker":e.push({type:"ticker",text:d,line:a});break;case"syndrome":{const r=Number(d);if(!Number.isInteger(r)||r<0||r>5)throw new m("@syndrome level must be an integer 0-5",a);e.push({type:"syndrome",level:r,line:a});break}case"sound":e.push({type:"sound",name:d.split(/\s+/)[0]??"",line:a});break;case"set":{const r=d.match(/^([A-Za-z0-9_]+)\s*(\+?=)\s*(.+)$/);if(!r)throw new m("@set syntax: @set flag = value | @set flag += value",a);e.push({type:"set",flag:r[1],value:S(r[3]),op:r[2]==="+="?"add":"set",line:a});break}case"jump":{const r=d.match(/^([A-Za-z0-9_]+)(?:\s+if\s+(.+))?$/);if(!r)throw new m("@jump syntax: @jump label [if condition]",a);e.push({type:"jump",label:r[1],condition:r[2]?q(r[2],a):void 0,line:a});break}case"choice":{const r=[];let b=!1;for(;t<i.length;){const x=t+1,k=i[t].trim();if(t++,k===""||k.startsWith("//"))continue;if(k==="@endchoice"){b=!0;break}const w=k.match(/^-\s+(.+?)\s*->\s*([A-Za-z0-9_]+)$/);if(!w)throw new m("choice option syntax: - text -> label",x);r.push({text:w[1],label:w[2],line:x})}if(!b)throw new m("@choice block is not closed with @endchoice",a);if(r.length===0)throw new m("@choice needs at least one option",a);e.push({type:"choice",options:r,line:a});break}case"end":{const r=d.match(/^(clear|bad)(?:\s+(.*))?$/i);r?e.push({type:"end",kind:(r[2]??"").trim()||r[1].toUpperCase(),endKind:r[1].toLowerCase(),line:a}):e.push({type:"end",kind:d||"END",endKind:"none",line:a});break}default:throw new m(`unknown directive @${p}`,a)}continue}const h=u.match(/^([a-z][a-z0-9_]*)(?:\(([a-z0-9_]+)\))?:\s*(.*)$/);h?e.push({type:"dialogue",charId:h[1],expression:h[2],text:h[3],line:a}):e.push({type:"narration",text:u,line:a})}return{nodes:e,labels:s}}class W{constructor(){c(this,"ctx",null);c(this,"ambienceNodes",[]);c(this,"ambienceOn",!1)}ensure(){if(typeof window>"u")return null;if(!this.ctx)try{this.ctx=new AudioContext}catch{return null}return this.ctx.state==="suspended"&&this.ctx.resume(),this.ctx}tone(e,s,i,t=.06,a,o=0){const u=this.ensure();if(!u)return;const h=u.currentTime+o,f=u.createOscillator(),p=u.createGain();f.type=i,f.frequency.setValueAtTime(e,h),a&&f.frequency.exponentialRampToValueAtTime(a,h+s),p.gain.setValueAtTime(t,h),p.gain.exponentialRampToValueAtTime(1e-4,h+s),f.connect(p).connect(u.destination),f.start(h),f.stop(h+s)}play(e){switch(e){case"blip":this.tone(880,.07,"square",.03);break;case"alert":this.tone(420,.45,"sawtooth",.07,110);break;case"chime":this.tone(660,.18,"sine",.06),this.tone(990,.25,"sine",.06,void 0,.12);break;case"tension":this.tone(98,.8,"triangle",.09,92);break}}toggleAmbience(){const e=this.ensure();if(!e)return!1;if(this.ambienceOn)return this.ambienceNodes.forEach(s=>{try{s.stop()}catch{}}),this.ambienceNodes=[],this.ambienceOn=!1,!1;for(const s of[6200,7450]){const i=e.createOscillator(),t=e.createGain(),a=e.createOscillator(),o=e.createGain();i.type="sine",i.frequency.value=s,t.gain.value=.006,a.frequency.value=13,o.gain.value=.004,a.connect(o).connect(t.gain),i.connect(t).connect(e.destination),i.start(),a.start(),this.ambienceNodes.push(i,a)}return this.ambienceOn=!0,!0}}const y="default",_="default";function P(n,e,s){const i=n.outfits[e],t=n.outfits[y];return(i==null?void 0:i.expressions[s])??(i==null?void 0:i.expressions[_])??(t==null?void 0:t.expressions[s])??(t==null?void 0:t.expressions[_])}const E="whc-save-v1";function Z(n,e){if(!n)return!0;const s=e[n.flag];switch(n.op){case"truthy":return!!s;case"falsy":return!s;case"==":return s===n.value;case"!=":return s!==n.value;case">=":return typeof s=="number"&&typeof n.value=="number"&&s>=n.value;case"<=":return typeof s=="number"&&typeof n.value=="number"&&s<=n.value;case">":return typeof s=="number"&&typeof n.value=="number"&&s>n.value;case"<":return typeof s=="number"&&typeof n.value=="number"&&s<n.value}}class J{constructor(e,s,i,t=document,a={}){c(this,"flags",{});c(this,"backlog",[]);c(this,"auto",!1);c(this,"skip",!1);c(this,"index",0);c(this,"shown",new Map);c(this,"outfits",new Map);c(this,"bg",null);c(this,"syndrome",0);c(this,"ticker","");c(this,"typing",!1);c(this,"fullText","");c(this,"typeTimer",null);c(this,"autoTimer",null);c(this,"audio",new W);c(this,"el",{});c(this,"dialogueEl",null);c(this,"advanceHandler",()=>this.onAdvanceClick());c(this,"endFired",!1);var o;this.script=e,this.characters=s,this.bgFiles=i,this.options=a;for(const u of["bg","tint","ticker-text","stage","name","text","choices","backlog-panel","backlog-list","syndrome-meter","end-screen","end-kind"]){const h=t.querySelector("#"+u);if(!h)throw new Error(`missing DOM element #${u}`);this.el[u]=h}this.dialogueEl=this.el.text.parentElement,(o=this.dialogueEl)==null||o.addEventListener("click",this.advanceHandler)}dispose(){var e;this.clearTimers(),this.auto=!1,this.skip=!1,(e=this.dialogueEl)==null||e.removeEventListener("click",this.advanceHandler)}charName(e){var s;return((s=this.characters.characters.find(i=>i.id===e))==null?void 0:s.name)??e}charDef(e){return this.characters.characters.find(s=>s.id===e)}start(){this.index=0,this.endFired=!1,this.hideEnd(),this.el.choices.style.display="none",this.el.choices.innerHTML="",this.el["backlog-panel"].style.display="none",this.step()}renderStage(){const e=this.el.stage;e.innerHTML="";for(const s of this.shown.values()){const i=this.charDef(s.charId);if(!i)continue;const t=document.createElement("img");t.src="./"+(P(i,s.outfit,s.expression)??""),t.alt=i.name,t.className="char pos-"+s.position,e.appendChild(t)}}renderBg(){this.el.bg.style.backgroundImage=this.bg&&this.bgFiles[this.bg]?`url(${"./"+this.bgFiles[this.bg]})`:""}renderSyndrome(){this.el["syndrome-meter"].textContent=this.syndrome>=3?`ホドラー症候群 L${this.syndrome}`:"",this.el.tint.style.opacity=this.syndrome>=3?String((this.syndrome-2)*.22):"0"}renderTicker(){this.el["ticker-text"].textContent=this.ticker}renderBacklog(){this.el["backlog-list"].innerHTML=this.backlog.map(e=>'<div class="bl-row"><b></b><span></span></div>').join(""),[...this.el["backlog-list"].children].forEach((e,s)=>{e.querySelector("b").textContent=this.backlog[s].speaker,e.querySelector("span").textContent=this.backlog[s].text})}step(){for(this.clearTimers();this.index<this.script.nodes.length;){const e=this.script.nodes[this.index];switch(e.type){case"label":this.index++;break;case"bg":this.bg=e.id,this.renderBg(),this.index++;break;case"show":this.shown.set(e.charId,{charId:e.charId,expression:e.expression,position:e.position,outfit:this.outfits.get(e.charId)??y}),this.renderStage(),this.index++;break;case"outfit":{this.outfits.set(e.charId,e.outfit);const s=this.shown.get(e.charId);s&&(s.outfit=e.outfit,this.renderStage()),this.index++;break}case"hide":this.shown.delete(e.charId),this.renderStage(),this.index++;break;case"clear":this.shown.clear(),this.renderStage(),this.index++;break;case"ticker":this.ticker=e.text,this.renderTicker(),this.index++;break;case"syndrome":this.syndrome=e.level,this.renderSyndrome(),this.index++;break;case"sound":this.audio.play(e.name),this.index++;break;case"set":{if(e.op==="add"){const s=this.flags[e.flag];this.flags[e.flag]=(typeof s=="number"?s:0)+(typeof e.value=="number"?e.value:0)}else this.flags[e.flag]=e.value;this.index++;break}case"jump":{if(Z(e.condition,this.flags)){const s=this.script.labels.get(e.label);if(s===void 0)return;this.index=s}else this.index++;break}case"dialogue":case"narration":this.showLine(e);return;case"choice":this.showChoices(e);return;case"end":this.showEnd(e.kind,e.endKind);return}}this.showEnd("END","none")}showLine(e){if(e.type==="dialogue"&&e.expression){const a=this.shown.get(e.charId);a&&(a.expression=e.expression,this.renderStage())}const s=e.type==="dialogue"?this.charName(e.charId):"";this.el.name.textContent=s,this.backlog.push({speaker:s,text:e.text}),this.renderBacklog(),this.fullText=e.text;const i=this.el.text;if(this.skip){i.textContent=e.text,this.typing=!1,this.autoTimer=window.setTimeout(()=>this.advance(),40);return}this.typing=!0,i.textContent="";let t=0;this.typeTimer=window.setInterval(()=>{t++,i.textContent=this.fullText.slice(0,t),t>=this.fullText.length&&this.finishTyping()},24)}finishTyping(){this.typeTimer&&(clearInterval(this.typeTimer),this.typeTimer=null),this.el.text.textContent=this.fullText,this.typing=!1,this.auto&&(this.autoTimer=window.setTimeout(()=>this.advance(),1100))}showChoices(e){this.el.name.textContent="",this.el.text.textContent="";const s=this.el.choices;s.innerHTML="",s.style.display="flex";for(const i of e.options){const t=document.createElement("button");t.textContent=i.text,t.className="choice-btn",t.addEventListener("click",()=>{this.audio.play("blip"),s.style.display="none",s.innerHTML="";const a=this.script.labels.get(i.label);a!==void 0&&(this.index=a,this.step())}),s.appendChild(t)}}showEnd(e,s){var i,t;this.el["end-kind"].textContent=e,this.el["end-screen"].style.display="flex",this.endFired||(this.endFired=!0,(t=(i=this.options).onEnd)==null||t.call(i,{kind:e,endKind:s}))}hideEnd(){this.el["end-screen"].style.display="none"}onAdvanceClick(){if(this.el.choices.style.display!=="flex"){if(this.typing){this.finishTyping();return}this.advance()}}advance(){this.index++,this.step()}clearTimers(){this.typeTimer&&(clearInterval(this.typeTimer),this.typeTimer=null),this.autoTimer&&(clearTimeout(this.autoTimer),this.autoTimer=null),this.typing=!1}toggleBacklog(){const e=this.el["backlog-panel"];e.style.display=e.style.display==="block"?"none":"block"}toggleAuto(){return this.auto=!this.auto,this.auto&&!this.typing&&(this.autoTimer=window.setTimeout(()=>this.advance(),600)),this.auto}toggleSkip(){return this.skip=!this.skip,this.skip}save(){const e={index:this.index,flags:this.flags,shown:[...this.shown.values()],bg:this.bg,syndrome:this.syndrome,ticker:this.ticker,backlog:this.backlog,episodeId:this.options.episodeId??null,outfits:Object.fromEntries(this.outfits)};localStorage.setItem(E,JSON.stringify(e))}load(){const e=localStorage.getItem(E);if(!e)return!1;const s=JSON.parse(e);if((s.episodeId??null)!==(this.options.episodeId??null))return!1;this.flags=s.flags??{},this.outfits=new Map(Object.entries(s.outfits??{})),this.shown=new Map(s.shown.map(t=>[t.charId,{...t,outfit:t.outfit??this.outfits.get(t.charId)??y}]));for(const t of this.shown.values())this.outfits.set(t.charId,t.outfit);this.bg=s.bg,this.syndrome=s.syndrome,this.ticker=s.ticker,this.backlog=s.backlog??[],this.hideEnd(),this.renderBg(),this.renderStage(),this.renderSyndrome(),this.renderTicker(),this.renderBacklog(),this.index=s.index;const i=this.script.nodes[this.index];return i&&(i.type==="dialogue"||i.type==="narration")?(this.backlog.pop(),this.showLine(i)):this.step(),!0}}const z="whc_progress_v1";function v(){try{return typeof localStorage<"u"?localStorage:null}catch{return null}}function $(n=v()){if(!n)return new Set;try{const e=n.getItem(z);if(!e)return new Set;const s=JSON.parse(e);return new Set(Array.isArray(s.cleared)?s.cleared.filter(i=>typeof i=="string"):[])}catch{return new Set}}function V(n,e=v()){if(!e)return;const s={cleared:[...n]};try{e.setItem(z,JSON.stringify(s))}catch{}}function G(n,e,s){return s!=="clear"||n.has(e)?new Set(n):new Set([...n,e])}function K(n,e,s=v()){const i=G($(s),n,e);return e==="clear"&&V(i,s),i}function U(n,e){const s=[...n].sort((i,t)=>i.order-t.order)[0];return s&&e.has(s.id)?"night":"day"}function Y(n,e,s=!1){const i=[...n].sort((a,o)=>a.order-o.order);if(s)return i;const t=[];for(const a of i)if(t.push(a),!e.has(a.id))break;return t}const X=[{id:"atkins",name:"ポール・アトキンス",color:"#2e5f8a",initials:"PA",outfits:{default:{expressions:{default:"assets/characters/atkins_default.svg",smile:"assets/characters/atkins_default.svg",serious:"assets/characters/atkins_default.svg"}},alt:{expressions:{default:"assets/characters/atkins_alt_default.svg",smile:"assets/characters/atkins_alt_smile.svg",serious:"assets/characters/atkins_alt_serious.svg"}}}},{id:"selig",name:"マイケル・セリグ",color:"#7a3b69",initials:"MS",outfits:{default:{expressions:{default:"assets/characters/selig_default.svg",smile:"assets/characters/selig_default.svg",serious:"assets/characters/selig_default.svg"}}}},{id:"lummis",name:"シンシア・ルミス",color:"#2f7a4f",initials:"CL",outfits:{default:{expressions:{default:"assets/characters/lummis_default.svg",smile:"assets/characters/lummis_default.svg",serious:"assets/characters/lummis_default.svg"}}}},{id:"saylor",name:"マイケル・セイラー",color:"#b06a1b",initials:"SY",outfits:{default:{expressions:{default:"assets/characters/saylor_default.svg",smile:"assets/characters/saylor_default.svg",serious:"assets/characters/saylor_default.svg"}}}},{id:"cz",name:"CZ",color:"#8a2e2e",initials:"CZ",outfits:{default:{expressions:{default:"assets/characters/cz_default.svg",smile:"assets/characters/cz_default.svg",serious:"assets/characters/cz_default.svg"}}}},{id:"tomlee",name:"トム・リー",color:"#4f4fa8",initials:"TL",outfits:{default:{expressions:{default:"assets/characters/tomlee_default.svg",smile:"assets/characters/tomlee_default.svg",serious:"assets/characters/tomlee_default.svg"}}}},{id:"sbf",name:"SBF",color:"#555f6e",initials:"SBF",outfits:{default:{expressions:{default:"assets/characters/sbf_default.svg",smile:"assets/characters/sbf_default.svg",serious:"assets/characters/sbf_default.svg"}}}},{id:"warren",name:"エリザベス・ウォーレン",color:"#6e2f4f",initials:"EW",outfits:{default:{expressions:{default:"assets/characters/warren_default.svg",smile:"assets/characters/warren_default.svg",serious:"assets/characters/warren_default.svg"}}}},{id:"hayes",name:"アーサー・ヘイズ",color:"#2e5d5d",initials:"AH",outfits:{default:{expressions:{default:"assets/characters/hayes_default.svg",smile:"assets/characters/hayes_default.svg",serious:"assets/characters/hayes_default.svg"}}}},{id:"dimon",name:"ジェイミー・ダイモン",color:"#44403a",initials:"JD",outfits:{default:{expressions:{default:"assets/characters/dimon_default.svg",smile:"assets/characters/dimon_default.svg",serious:"assets/characters/dimon_default.svg"}}}},{id:"sanders",name:"バーニー・サンダース",color:"#6b5a3e",initials:"BS",outfits:{default:{expressions:{default:"assets/characters/sanders_default.svg",smile:"assets/characters/sanders_default.svg",serious:"assets/characters/sanders_default.svg"}}}},{id:"cramer",name:"ジム・クレイマー",color:"#7a3a1e",initials:"JC",outfits:{default:{expressions:{default:"assets/characters/cramer_default.svg",smile:"assets/characters/cramer_default.svg",serious:"assets/characters/cramer_default.svg"}}}},{id:"fink",name:"ラリー・フィンク",color:"#37474f",initials:"LF",outfits:{default:{expressions:{default:"assets/characters/fink_default.svg",smile:"assets/characters/fink_default.svg",serious:"assets/characters/fink_default.svg"}}}},{id:"buffett",name:"ウォーレン・バフェット",color:"#6d4c41",initials:"WB",outfits:{default:{expressions:{default:"assets/characters/buffett_default.svg",smile:"assets/characters/buffett_default.svg",serious:"assets/characters/buffett_default.svg"}}}},{id:"pomp",name:"アンソニー・ポンプリアーノ",color:"#455a64",initials:"AP",outfits:{default:{expressions:{default:"assets/characters/pomp_default.svg",smile:"assets/characters/pomp_default.svg",serious:"assets/characters/pomp_default.svg"}}}},{id:"schiff",name:"ピーター・シフ",color:"#8a6d1f",initials:"PS",outfits:{default:{expressions:{default:"assets/characters/schiff_default.svg",smile:"assets/characters/schiff_default.svg",serious:"assets/characters/schiff_default.svg"}}}}],Q={characters:X},ee=[{id:"office_day",name:"ワシントンのオフィス（昼）",file:"assets/backgrounds/street.svg"},{id:"market_night",name:"暴落する市場（夜）",file:"assets/backgrounds/street.svg"},{id:"sec_hq",name:"SEC本部",file:"assets/backgrounds/street.svg"},{id:"capitol",name:"議事堂",file:"assets/backgrounds/capitol.svg"},{id:"club",name:"茶話会の部屋",file:"assets/backgrounds/club.svg"},{id:"office",name:"SEC執務室",file:"assets/backgrounds/office.svg"},{id:"home",name:"アトキンス宅",file:"assets/backgrounds/home.svg"},{id:"night",name:"夜のワシントン",file:"assets/backgrounds/night.svg"},{id:"crash",name:"暴落する市場",file:"assets/backgrounds/crash.svg"},{id:"void",name:"闇（ループ）",file:"assets/backgrounds/street.svg"},{id:"street",name:"村の通り（昼）",file:"assets/backgrounds/street.svg"},{id:"senate",name:"上院（議会）",file:"assets/backgrounds/senate.svg"}],se={backgrounds:ee},te=[{id:"ep01",order:1,scenario:"episodes/ep01/scenario.txt",subtitle:"鬼隠し編",title:"第1章「消える流動性」"}],ne={episodes:te},ie=`// ============================================================
 // WHEN HODLERS CRY — dev engine demo scenario (original mini demo)
