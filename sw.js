@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-oyashiro-inline-position-v8';
+const CACHE_NAME = 'whc-oyashiro-balanced-v9';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
@@ -57,8 +57,8 @@ const PRECACHE_URLS = [
   "./assets/characters/warren_default.svg",
   "./assets/characters/warren_serious.svg",
   "./assets/characters/warren_smile.svg",
-  "./assets/index-oyashiro-position-v4.css",
-  "./assets/index-oyashiro-align-v2.js",
+  "./assets/index-oyashiro-balanced-v3.css",
+  "./assets/index-oyashiro-balanced-v3.js",
   "./assets/title-day-wide.svg",
   "./assets/title-tall.svg",
   "./assets/title-wide.svg",
