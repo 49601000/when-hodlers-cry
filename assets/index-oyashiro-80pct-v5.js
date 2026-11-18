@@ -181,7 +181,7 @@ atkins(default): ……ん？　この取引所、買い板が薄くないか？
 @hide atkins
 @show dimon serious center
 @sound blip
-dimon(serious): おいSECの人、その顔は「気づいた」顔だな。ジェイミー・ダイモンだ。銀行の人間が言うのもなんだが……今夜は、妙だ。
+dimon(serious): ああ、アトキンスさん。銀行のジェイミー・ダイモンです。いやぁ、遅くまでお疲れさまです。……ひとつだけ。さっきまであった買い板、どこへ行ったかご存じですか？
 
 @label m5
 @show atkins serious left
@@ -191,7 +191,7 @@ atkins(serious): ダイモンさんまで……。何か知ってるんですか
 @label m6
 @hide atkins
 @show dimon serious center
-dimon(serious): 知ってるのは「誰も何も言わない」という事実だけだ。流動性が消える夜は、決まって静かだ。……気をつけな、SECの人。疑うべきは価格じゃない、人だ。
+dimon(serious): 何人かに電話したんですがね。相場の話ならよくしゃべる連中が、今夜は揃って黙ってまして。……委員長、値段より、誰が黙ったかを覚えといてください。
 
 @label m7
 // scene: 帰路 — 夜のワシントン
@@ -431,7 +431,7 @@ tomlee(serious): ……ひっ……！　や、やめてくださいまし……
 @label f5
 @hide tomlee
 @show dimon serious center
-dimon(serious): SECの人！　聞こえるか！　これは自然な暴落じゃない。売りの出所が人工的だ。……だがな、もっと怖いのは価格じゃない。全員の目が、もう「L5 の目」になってることだ！
+dimon(serious): アトキンスさん、私の声、聞こえますか。最初の売り、あれは誰かが狙って出してます。……委員長、画面から目を離して、周りを見てください。みんな、もうL5の目をしてますよ。
 
 @label f6
 @hide dimon
