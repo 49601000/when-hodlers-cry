@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-ep01-20261118-sbf-atkins-size-v4';
+const CACHE_NAME = 'whc-oyashiro-position-20261118-v5';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
@@ -57,7 +57,7 @@ const PRECACHE_URLS = [
   "./assets/characters/warren_default.svg",
   "./assets/characters/warren_serious.svg",
   "./assets/characters/warren_smile.svg",
-  "./assets/index-COEUc1C4.css",
+  "./assets/index-oyashiro-position-v2.css",
   "./assets/index-oyashiro-20261118.js",
   "./assets/title-day-wide.svg",
   "./assets/title-tall.svg",
