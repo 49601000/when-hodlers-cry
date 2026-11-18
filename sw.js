@@ -1,5 +1,5 @@
 // Generated at build time by vite-plugin-whc-pwa.ts. Do not edit the built copy.
-const CACHE_NAME = 'whc-7f24bd73ba23';
+const CACHE_NAME = 'whc-0efe4c2fece5';
 const PRECACHE_URLS = [
   "./",
   "./assets/backgrounds/capitol.svg",
@@ -58,7 +58,7 @@ const PRECACHE_URLS = [
   "./assets/characters/warren_serious.svg",
   "./assets/characters/warren_smile.svg",
   "./assets/index-COEUc1C4.css",
-  "./assets/index-DmMMMKSf.js",
+  "./assets/index-D7BwKOFn.js",
   "./assets/title-day-wide.svg",
   "./assets/title-tall.svg",
   "./assets/title-wide.svg",
@@ -98,10 +98,19 @@ self.addEventListener('fetch', (event) => {
   if (request.method !== 'GET') return;
   if (new URL(request.url).origin !== self.location.origin) return;
   if (request.mode === 'navigate') {
-    // App shell: always serve the cached index.html (query strings such as
-    // ?scenario=demo or ?unlock=all are handled by the app itself).
+    // App shell: network-first so a fresh deploy is picked up on the next
+    // launch; the cached index.html is only the offline fallback (query
+    // strings such as ?scenario=demo or ?unlock=all are handled by the app).
     event.respondWith(
-      caches.match(INDEX_URL).then((cached) => cached || fetch(request))
+      fetch(request)
+        .then((response) => {
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(INDEX_URL, copy));
+          }
+          return response;
+        })
+        .catch(() => caches.match(INDEX_URL).then((cached) => cached || fetch(request)))
     );
     return;
   }
